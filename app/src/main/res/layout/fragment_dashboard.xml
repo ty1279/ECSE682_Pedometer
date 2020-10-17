@@ -5,52 +5,77 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".ui.dashboard.DashboardFragment">
-    <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/dashboardLayout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="#FFFFFF">
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="328dp"
+            android:layout_height="42dp"
+            android:layout_marginStart="9dp"
+            android:layout_marginLeft="9dp"
+            android:layout_marginBottom="492dp"
+            android:text="How far are you from your goals?"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/linearLayout" />
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_below="@id/dashboardLayout"
+            android:layout_marginStart="7dp"
+            android:layout_marginLeft="7dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginRight="16dp"
+            android:layout_marginBottom="556dp"
+            android:text="Steps /"
+            android:textSize="30sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/goalView"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/toolbar" />
+
+        <TextView
+            android:id="@+id/goalView"
+            android:layout_width="0dp"
+            android:layout_height="45dp"
+            android:layout_below="@id/dashboardLayout"
+            android:layout_marginEnd="149dp"
+            android:layout_marginRight="149dp"
+            android:text="Goal"
+            android:textSize="30sp"
+            app:layout_constraintBaseline_toBaselineOf="@+id/textView"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/textView" />
+
         <androidx.appcompat.widget.Toolbar
             android:id="@+id/toolbar"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_marginBottom="24dp"
             android:background="#00008577"
             android:minHeight="?attr/actionBarSize"
             android:theme="?attr/actionBarTheme"
+            app:layout_constraintBottom_toTopOf="@+id/textView"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:navigationIcon="@drawable/menu" />
-        <TextView
-            android:id="@+id/textView"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:layout_marginLeft="16dp"
-            android:layout_marginTop="24dp"
-            android:text="Dashboard"
-            android:textSize="30sp"
-            app:fontFamily="@font/baloo"
-            app:layout_constraintEnd_toStartOf="@+id/imageView"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/toolbar" />
-        <TextView
-            android:id="@+id/textView2"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:layout_marginLeft="16dp"
-            android:text="How far are you from your goals?"
-            app:layout_constraintEnd_toStartOf="@+id/imageView"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView" />
+            app:navigationIcon="@drawable/running_shoes" />
 
         <ImageView
             android:id="@+id/imageView"
             android:layout_width="117dp"
             android:layout_height="91dp"
+            android:layout_marginTop="12dp"
             android:layout_marginEnd="16dp"
             android:layout_marginRight="16dp"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
             app:layout_constraintStart_toEndOf="@+id/textView"
             app:layout_constraintTop_toBottomOf="@+id/toolbar"
             app:srcCompat="@drawable/icon_steps" />
@@ -63,10 +88,10 @@
             android:padding="10dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/linearLayout"
-            app:layout_constraintVertical_bias="0.0">
+            app:layout_constraintVertical_bias="1.0">
 
             <androidx.cardview.widget.CardView
                 android:layout_width="0dp"
@@ -86,8 +111,8 @@
                         android:layout_centerHorizontal="true"
                         android:layout_marginTop="10dp"
                         android:text="Run"
-                        android:textSize="24sp"
-                        app:fontFamily="@font/aclonica" />
+                        android:textSize="24sp" />
+                    <!--                        app:fontFamily="@font/aclonica" />-->
 
                     <ImageView
                         android:id="@+id/bus1"
@@ -124,8 +149,8 @@
                         android:layout_centerHorizontal="true"
                         android:layout_marginTop="10dp"
                         android:text="Fast Run"
-                        android:textSize="24sp"
-                        app:fontFamily="@font/aclonica" />
+                        android:textSize="24sp" />
+                    <!--                        app:fontFamily="@font/aclonica" />-->
 
                     <ImageView
                         android:id="@+id/train"
@@ -142,10 +167,11 @@
             android:id="@+id/linearLayout"
             android:layout_width="404dp"
             android:layout_height="245dp"
+            android:layout_marginTop="32dp"
             android:orientation="horizontal"
             android:padding="10dp"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.75"
+            app:layout_constraintHorizontal_bias="1.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/imageView">
 
@@ -167,8 +193,8 @@
                         android:layout_centerHorizontal="true"
                         android:layout_marginTop="10dp"
                         android:text="Slow Walk"
-                        android:textSize="24sp"
-                        app:fontFamily="@font/aclonica" />
+                        android:textSize="24sp" />
+                    <!--                        app:fontFamily="@font/aclonica" />-->
 
                     <ImageView
                         android:id="@+id/bus"
@@ -198,8 +224,8 @@
                         android:layout_centerHorizontal="true"
                         android:layout_marginTop="10dp"
                         android:text="Walk"
-                        android:textSize="24sp"
-                        app:fontFamily="@font/aclonica" />
+                        android:textSize="24sp" />
+                    <!--                        app:fontFamily="@font/aclonica" />-->
 
                     <ImageView
                         android:id="@+id/imageView3"

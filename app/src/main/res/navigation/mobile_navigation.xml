@@ -18,8 +18,13 @@
         tools:layout="@layout/fragment_dashboard" />
 
     <fragment
+        android:id="@+id/navigation_set_goals"
+        android:name="com.example.pedometer.ui.dashboard.DashboardFragment"
+        android:label="SetGoals"
+        tools:layout="@layout/fragment_setgoals" />
+
+    <fragment
         android:id="@+id/navigation_notifications"
         android:name="com.example.pedometer.ui.notifications.NotificationsFragment"
-        android:label="@string/title_notifications"
         tools:layout="@layout/fragment_notifications" />
 </navigation>
