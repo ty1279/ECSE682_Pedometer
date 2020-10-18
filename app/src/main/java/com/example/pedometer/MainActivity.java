@@ -8,6 +8,7 @@ import android.hardware.SensorEvent;
 import android.hardware.SensorEventListener;
 import android.hardware.SensorManager;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.TextView;
@@ -29,6 +30,9 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
     TextView goalView;
     SensorManager sensorManager;
     boolean running = false;
+    Bundle mySavedData = null;
+    public String steps;
+
 
     @SuppressLint("WrongViewCast")
     @Override
@@ -36,8 +40,6 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         BottomNavigationView navView = findViewById(R.id.nav_view);
-        // Passing each menu ID as a set of Ids because each
-        // menu should be considered as top level destinations.
         AppBarConfiguration appBarConfiguration = new AppBarConfiguration.Builder(
                 R.id.navigation_home, R.id.navigation_dashboard, R.id.navigation_notifications)
                 .build();
@@ -45,11 +47,11 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
         NavigationUI.setupActionBarWithNavController(this, navController, appBarConfiguration);
         NavigationUI.setupWithNavController(navView, navController);
 
-        textView5 = (TextView) findViewById(R.id.textView5);
-        textView5.setText("0 Steps");
-
-//        TextView stepCountView = (TextView) findViewById(R.id.textView); // Text View from Dashboard menu
-//        stepCountView.setText("0 Steps");
+        // Exception handling
+//        if (steps == null)
+//            steps = "0";
+//        textView5 = (TextView) findViewById(R.id.textView5);
+//        textView5.setText("  Current step: " + steps);
 
         sensorManager = (SensorManager) getSystemService(Context.SENSOR_SERVICE);
     }
@@ -75,24 +77,21 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
     @Override
     public void onSensorChanged(SensorEvent event) {
         if (running) {
-            textView5.setText(String.valueOf(event.values[0]) + " Steps");     // Text View from Home menu
-            String steps = String.valueOf(event.values[0]);   //Get step count from MainActivity.java
-
-//            String stepText = "";
-//            stepText = steps + (" steps /");
-
-//            ConstraintLayout dash = (ConstraintLayout) findViewById(R.id.dashboardLayout);
-//            TextView stepCountView = (TextView) dash.findViewById(R.id.textView); // Text View from Dashboard menu
-//            stepCountView.setText(stepText);
-
-            TextView goalView = (TextView) dash.findViewById(R.id.goalView); // Text View from Dashboard menu
-            // Get "goal steps" from goal setting page
-            goalView.setText(" steps");
+            steps = String.valueOf(event.values[0]);   //Get step count from MainActivity.java
+            textView5.setText("  Current step:  " + steps);
         }
     }
 
     @Override
     public void onAccuracyChanged(Sensor sensor, int accuracy) {
+    }
+
+    public void saveData(int id, Bundle data) {
+        mySavedData = data;
+    }
+
+    public Bundle getSavedData() {
+        return mySavedData;
     }
 
 }

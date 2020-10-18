@@ -10,7 +10,7 @@ public class HomeViewModel extends ViewModel {
 
     public HomeViewModel() {
         mText = new MutableLiveData<>();
-        mText.setValue("Step counter");
+        mText.setValue("Step counter \n-Team 3-");
     }
 
     public LiveData<String> getText() {

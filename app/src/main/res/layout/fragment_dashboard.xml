@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.dashboard.DashboardFragment">
+    tools:context="com.example.pedometer.ui.dashboard.DashboardFragment">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/dashboardLayout"
@@ -32,9 +32,10 @@
             android:layout_marginLeft="7dp"
             android:layout_marginEnd="16dp"
             android:layout_marginRight="16dp"
-            android:layout_marginBottom="556dp"
+
+
             android:text="Steps /"
-            android:textSize="30sp"
+            android:textSize="20sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toStartOf="@+id/goalView"
             app:layout_constraintStart_toStartOf="parent"
@@ -42,13 +43,13 @@
 
         <TextView
             android:id="@+id/goalView"
-            android:layout_width="0dp"
-            android:layout_height="45dp"
+            android:layout_width="136dp"
+            android:layout_height="42dp"
             android:layout_below="@id/dashboardLayout"
             android:layout_marginEnd="149dp"
             android:layout_marginRight="149dp"
             android:text="Goal"
-            android:textSize="30sp"
+            android:textSize="20sp"
             app:layout_constraintBaseline_toBaselineOf="@+id/textView"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/textView" />
@@ -69,8 +70,8 @@
 
         <ImageView
             android:id="@+id/imageView"
-            android:layout_width="117dp"
-            android:layout_height="91dp"
+            android:layout_width="89dp"
+            android:layout_height="78dp"
             android:layout_marginTop="12dp"
             android:layout_marginEnd="16dp"
             android:layout_marginRight="16dp"

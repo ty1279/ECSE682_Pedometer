@@ -10,7 +10,6 @@ public class SetGoalsViewModel extends ViewModel {
 
     public SetGoalsViewModel() {
         mText = new MutableLiveData<>();
-        mText.setValue("This is Goal Setting fragment");
     }
 
     public LiveData<String> getText() {
