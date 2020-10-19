@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -22,6 +23,12 @@ public class DashboardFragment extends Fragment {
     TextView goalView;
     TextView textView;
 
+    ProgressBar determinateBar;
+    TextView maxValue;
+
+    TextView distance;
+    TextView calories;
+
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
@@ -38,13 +45,6 @@ public class DashboardFragment extends Fragment {
         }
 
         else{
-            // Display Goal count
-            Bundle savedData = activity.getSavedData();
-            String data = savedData.getString("key");
-            if (data == null)
-                data = "";
-            goalView.setText(data + " Steps");
-
             // Display current step count
             String steps = "";
             MainActivity application = (MainActivity) getActivity();
@@ -52,8 +52,36 @@ public class DashboardFragment extends Fragment {
             if (steps == null)
                 steps = "0";
             textView.setText(steps + " / ");
-        }
 
+            // Display Goal count
+            Bundle savedData = activity.getSavedData();
+            String data = savedData.getString("key");
+            if (data == null)
+                data = "";
+
+            goalView.setText(data + " Steps");
+
+            // Progress bar
+            int goal_data = Integer.parseInt(data);
+            int steps_in_integer = Integer.parseInt(steps);
+            System.out.println("##### test " + goal_data);
+            System.out.println("##### steps " + steps_in_integer);
+            maxValue  = root.findViewById(R.id.MaxValue);
+            determinateBar= root.findViewById(R.id.determinateBar);
+            determinateBar.setMax(goal_data);
+            maxValue.setText(String.valueOf(goal_data));
+
+            determinateBar.setProgress(steps_in_integer);
+
+            // Distance text
+            distance =  root.findViewById(R.id.distance_text);
+            // Calories text
+            calories =  root.findViewById(R.id.calories_text);
+            // 1 step = 0.0008 km walking = 0.061 cal
+            distance.setText("Distance: " + (steps_in_integer * 0.0008) + " km");
+            calories.setText("Calories: " + (steps_in_integer * 0.061) + " cal");
+
+        }
         return root;
     }
 }

@@ -85,7 +85,7 @@
             android:id="@+id/linearLayout2"
             android:layout_width="408dp"
             android:layout_height="244dp"
-            android:orientation="horizontal"
+            android:orientation="vertical"
             android:padding="10dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -94,150 +94,77 @@
             app:layout_constraintTop_toBottomOf="@+id/linearLayout"
             app:layout_constraintVertical_bias="1.0">
 
-            <androidx.cardview.widget.CardView
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_margin="10dp"
-                android:layout_weight="1">
+            <TextView
+                android:id="@+id/distance_text"
+                android:layout_width="match_parent"
+                android:layout_height="42dp"
+                android:inputType="number"
+                android:text="Distance: 0 km"
+                android:textSize="20dp"
+                tools:ignore="MissingConstraints" />
 
-                <RelativeLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent">
-
-                    <TextView
-                        android:id="@+id/textView6"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_below="@id/bus1"
-                        android:layout_centerHorizontal="true"
-                        android:layout_marginTop="10dp"
-                        android:text="Run"
-                        android:textSize="24sp" />
-                    <!--                        app:fontFamily="@font/aclonica" />-->
-
-                    <ImageView
-                        android:id="@+id/bus1"
-                        android:layout_width="75dp"
-                        android:layout_height="75dp"
-                        android:layout_centerHorizontal="true"
-                        android:layout_marginTop="15dp"
-                        app:srcCompat="@drawable/icon_run" />
-
-                    <!--                    <com.jjoe64.graphview.GraphView-->
-                    <!--                        android:id="@+id/graph"-->
-                    <!--                        android:layout_width="match_parent"-->
-                    <!--                        android:layout_height="76dp" />-->
-
-                </RelativeLayout>
-
-            </androidx.cardview.widget.CardView>
-
-            <androidx.cardview.widget.CardView
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_margin="10dp"
-                android:layout_weight="1">
-
-                <RelativeLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent">
-
-                    <TextView
-                        android:id="@+id/textView7"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_below="@id/train"
-                        android:layout_centerHorizontal="true"
-                        android:layout_marginTop="10dp"
-                        android:text="Fast Run"
-                        android:textSize="24sp" />
-                    <!--                        app:fontFamily="@font/aclonica" />-->
-
-                    <ImageView
-                        android:id="@+id/train"
-                        android:layout_width="75dp"
-                        android:layout_height="75dp"
-                        android:layout_centerHorizontal="true"
-                        android:layout_marginTop="15dp"
-                        app:srcCompat="@drawable/icon_fastrun" />
-                </RelativeLayout>
-            </androidx.cardview.widget.CardView>
+            <TextView
+                android:id="@+id/calories_text"
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:inputType="number"
+                android:text="Calories: 0 cal"
+                android:textSize="20dp"
+                tools:ignore="MissingConstraints" />
         </LinearLayout>
 
         <LinearLayout
             android:id="@+id/linearLayout"
-            android:layout_width="404dp"
-            android:layout_height="245dp"
+            android:layout_width="415dp"
+            android:layout_height="227dp"
             android:layout_marginTop="32dp"
-            android:orientation="horizontal"
+            android:orientation="vertical"
             android:padding="10dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="1.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/imageView">
 
-            <androidx.cardview.widget.CardView
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_margin="10dp"
-                android:layout_weight="1">
+            <ProgressBar
+                android:id="@+id/determinateBar"
+                style="@android:style/Widget.ProgressBar.Horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="39dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginRight="10dp"
+                android:progress="0"
+                android:progressTint="#0066cc" />
 
-                <RelativeLayout
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:orientation="horizontal">
+
+                <TextView
                     android:layout_width="match_parent"
-                    android:layout_height="202dp">
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:padding="5dp"
+                    android:text="0"
+                    android:textColor="#000000"
+                    android:textStyle="bold" />
 
-                    <TextView
-                        android:id="@+id/textView3"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_below="@id/bus"
-                        android:layout_centerHorizontal="true"
-                        android:layout_marginTop="10dp"
-                        android:text="Slow Walk"
-                        android:textSize="24sp" />
-                    <!--                        app:fontFamily="@font/aclonica" />-->
-
-                    <ImageView
-                        android:id="@+id/bus"
-                        android:layout_width="75dp"
-                        android:layout_height="75dp"
-                        android:layout_centerHorizontal="true"
-                        android:layout_marginTop="15dp"
-                        app:srcCompat="@drawable/icon_slowwalk" />
-                </RelativeLayout>
-            </androidx.cardview.widget.CardView>
-
-            <androidx.cardview.widget.CardView
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_margin="10dp"
-                android:layout_weight="1">
-
-                <RelativeLayout
+                <TextView
+                    android:id="@+id/MaxValue"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent">
-
-                    <TextView
-                        android:id="@+id/textView4"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_below="@id/imageView3"
-                        android:layout_centerHorizontal="true"
-                        android:layout_marginTop="10dp"
-                        android:text="Walk"
-                        android:textSize="24sp" />
-                    <!--                        app:fontFamily="@font/aclonica" />-->
-
-                    <ImageView
-                        android:id="@+id/imageView3"
-                        android:layout_width="75dp"
-                        android:layout_height="75dp"
-                        android:layout_centerHorizontal="true"
-                        android:layout_marginTop="15dp"
-                        app:srcCompat="@drawable/icon_walk" />
-                </RelativeLayout>
-            </androidx.cardview.widget.CardView>
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="right"
+                    android:padding="5dp"
+                    android:text="0"
+                    android:textColor="#000000"
+                    android:textStyle="bold" />
+            </LinearLayout>
         </LinearLayout>
+
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </ScrollView>

@@ -54,6 +54,7 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
 //        textView5.setText("  Current step: " + steps);
 
         sensorManager = (SensorManager) getSystemService(Context.SENSOR_SERVICE);
+        steps = "32";
     }
 
     @Override
