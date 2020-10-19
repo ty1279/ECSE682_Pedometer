@@ -47,14 +47,7 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
         NavigationUI.setupActionBarWithNavController(this, navController, appBarConfiguration);
         NavigationUI.setupWithNavController(navView, navController);
 
-        // Exception handling
-//        if (steps == null)
-//            steps = "0";
-//        textView5 = (TextView) findViewById(R.id.textView5);
-//        textView5.setText("  Current step: " + steps);
-
         sensorManager = (SensorManager) getSystemService(Context.SENSOR_SERVICE);
-        steps = "32";
     }
 
     @Override
@@ -94,5 +87,4 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
     public Bundle getSavedData() {
         return mySavedData;
     }
-
 }

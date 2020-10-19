@@ -45,6 +45,9 @@ public class DashboardFragment extends Fragment {
         }
 
         else{
+            //  To Miguel: The step count used in the dashboard is being called from the main activity's global variable. (variable name: steps, line 34)
+            //             That's how I saved the steps between different java classes, but since the service is done from your end, you can replace all the "steps" in this code with that.
+
             // Display current step count
             String steps = "";
             MainActivity application = (MainActivity) getActivity();
